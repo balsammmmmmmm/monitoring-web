@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  --background: #f4f6fa;
+  --foreground: #2f3640;
+  --card: #ffffff;
+  --header: #fdfdfe;
+  --border: #e2e8f0;
+  --secondary: #e8ecf2;
+  --muted: #f1f3f7;
+  --muted-foreground: #6b7280;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --ok: #16a34a;
+  --ok-surface: #dcfce7;
+  --warn: #d97706;
+  --warn-surface: #fef3c7;
+  --bad: #dc2626;
+  --bad-surface: #fee2e2;
+  --info: #2563eb;
+  --money-pos: #16a34a;
+  --money-neg: #dc2626;
+  --zebra: #f6f8fb;
+  --surface-raised: #ffffff;
+
+  --gradient-glow: radial-gradient(
+    ellipse at top left,
+    rgba(37, 99, 235, 0.08),
+    transparent 60%
+  );
+  --gradient-rail: linear-gradient(to bottom, #2563eb, #2563eb);
+  --shadow-panel: 0 1px 3px rgba(15, 23, 42, 0.1), 0 4px 12px -4px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 0 1px rgba(37, 99, 235, 0.3), 0 0 18px -6px rgba(37, 99, 235, 0.4);
+}
+
+@layer base {
+  html {
+    font-family: 'Sora', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .label {
+    @apply text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--muted-foreground)];
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
